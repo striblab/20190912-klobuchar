@@ -15,7 +15,7 @@ class AllChart {
             top: 20,
             right: 40,
             bottom: 20,
-            left: 60,
+            left: 80,
         };
 
         self.chartCounts = c3.generate({

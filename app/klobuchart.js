@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 import * as c3 from 'c3';
 
-class KlobuChart {
+class PrezChart {
 
     constructor(target) {
         this.target = target;
@@ -15,7 +15,7 @@ class KlobuChart {
             top: 20,
             right: 40,
             bottom: 20,
-            left: 120,
+            left: 60,
         };
 
         self.chartCounts = c3.generate({
@@ -23,29 +23,40 @@ class KlobuChart {
             padding: padding,
             data: {
                 columns: [
-                    ['Source', 0.294405998,0.399077278,0.243656286,0.062860438]
+                    ['2019', 18104,24438,35745,35109,29535,46852],
+                    ['Klobuchar', 0,8712,8955,5027,3496,8341],
+                    ['2015', 6080,6053,8398,8013,11505,13760]
                 ],
-                type: 'bar',
+                types: {
+                    '2015': 'spline',
+                    '2019': 'area',
+                    'Klobuchar': 'area',
+                },
                 labels: {
                     format: {
-                        'Source': d3.format('.0%')
+                        // '2015': d3.format(','),
+                        // '2019': d3.format(',')
                     }
                 },
                 line: {
                     connectNull: true
-                }
+                },
+                groups: [['Klobuchar', '2019']]
             },
             legend: {
                 show: false
             },
+            point: {
+                show: false,
+            },
             color: {
-                pattern: ['#3580A3']
+                pattern: ['#67B4C2','#0D4673','#969696']
             },
             axis: {
-                rotated: true,
+                // rotated: true,
                 y: {
-                    show: false,
-                    max: 1,
+                    show: true,
+                    max: 60000,
                     min: 0, 
                     padding: {
                         bottom: 0,
@@ -53,8 +64,8 @@ class KlobuChart {
                     },
                     tick: {
                         count: 4,
-                        values: [0, 0.25, 0.50, 0.75, 1],
-                        format: d3.format('.0%')
+                        values: [0, 20000, 40000, 60000],
+                        format: d3.format(',')
                     }
                 },
                 x: {
@@ -63,7 +74,7 @@ class KlobuChart {
                         left: 0
                     },
                     type: 'category',
-                    categories: ['Outside MN','MN: Klobuchar Only','MN: Others'],
+                    categories: ['Jan.','Feb.','Mar.','April','May','June'],
                     tick: {
                         multiline: false
                     }
@@ -73,23 +84,19 @@ class KlobuChart {
                 focus: {
                     show: false
                 }
-            },
-            tooltip: {
-                contents: function(d, defaultTitleFormat, defaultValueFormat, color) {
-                    return '<div class="chart-tooltip gray5"><span class="tooltip-label">' + d[0].x + ':</span>' +
-                        '<span class="tooltip-value">' + defaultValueFormat(d[0].value) + '</span></div>'
-                }
             }
         });
 
-        d3.selectAll(".c3-target-unknown")
-        .selectAll(".c3-bar, .c3-texts")
-        .attr("transform", "translate(0, 15)");
+        // d3.selectAll(".c3-target-2019")
+        // .selectAll(".c3-bar, .c3-texts")
+        // .attr("transform", "translate(0, 4)");
+
     }
+
 
 }
 
 export {
-    KlobuChart as
+    PrezChart as
     default
 }

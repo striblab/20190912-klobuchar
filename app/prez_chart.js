@@ -15,7 +15,7 @@ class PrezChart {
             top: 20,
             right: 40,
             bottom: 20,
-            left: 60,
+            left: 80,
         };
 
         self.chartCounts = c3.generate({
@@ -24,13 +24,15 @@ class PrezChart {
             data: {
                 columns: [
                     ['2015', 40000,18000],
-                    ['2019', 122000,55000]
+                    ['2019', 122000,55000],
+                    ['Klobuchar',35000,20000]
                 ],
                 type: 'bar',
                 labels: {
                     format: {
                         '2015': d3.format(','),
-                        '2019': d3.format(',')
+                        '2019': d3.format(','),
+                        'Klobuchar': d3.format(',')
                     }
                 },
                 line: {
@@ -41,13 +43,13 @@ class PrezChart {
                 show: false
             },
             color: {
-                pattern: ['#969696','#67B4C2']
+                pattern: ['#969696','#67B4C2','#0D4673']
             },
             axis: {
                 rotated: true,
                 y: {
                     show: false,
-                    max: 381000,
+                    max: 150000,
                     min: 0, 
                     padding: {
                         bottom: 0,
@@ -55,7 +57,7 @@ class PrezChart {
                     },
                     tick: {
                         count: 4,
-                        values: [0, 381000],
+                        values: [0, 150000],
                         format: d3.format(',')
                     }
                 },
@@ -81,6 +83,11 @@ class PrezChart {
         d3.selectAll(".c3-target-2019")
         .selectAll(".c3-bar, .c3-texts")
         .attr("transform", "translate(0, 4)");
+
+
+        d3.selectAll(".c3-target-Klobuchar")
+        .selectAll(".c3-bar, .c3-texts")
+        .attr("transform", "translate(0, 8)");
 
     }
 

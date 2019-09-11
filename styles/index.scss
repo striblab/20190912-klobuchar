@@ -33,3 +33,28 @@ $selector-wrapper: '.strib-styles.ssa.ssb.ssc';
 .c3-tooltip-container {
   font-size:0.8em !important;
 }
+
+@media (max-width:500px) {
+  #wrapper {
+      width:100%;
+  }
+
+  .slide {
+   width:100%;
+   padding:18px;
+  }
+
+.ind {
+    width:17%;
+}
+
+
+.gop {
+    width:33%;
+}
+
+.dfl {  
+    width:21%;
+}
+
+}

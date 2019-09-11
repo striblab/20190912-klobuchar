@@ -118,6 +118,58 @@ h2 {
     padding-bottom:40px;
 }
 
+table.tableizer-table {
+  font-size: 12px;
+  border: 1px solid #CCC; 
+  font-family: Arial, Helvetica, sans-serif;
+} 
+.tableizer-table td {
+  padding: 4px;
+  margin: 3px;
+  border: 1px solid #CCC;
+  text-align:right;
+}
+.tableizer-table th {
+  background-color: #104E8B; 
+  color: #FFF;
+  font-weight: bold;
+}
+.candidate {
+  text-align:left !important;
+}
+.dropped {
+  color:#888888;
+}
+.cutoff {
+  display:none;
+}
+#showhide {
+  color:#888888;
+  text-align:center;
+  font-size:0.8em;
+}
+#showhide:hover {
+  opacity:0.5;
+  cursor:pointer;
+}
+
+text {
+  font-family: "Benton Sans", Helvetica, Arial, sans-serif !important;
+  font-size: 11px;
+}
+#map {
+  pointer-events:none !important;
+}
+
+.c3-area {
+  opacity:1 !important;
+}
+
+.c3-line {
+  opacity:1 !important;
+  stroke-width:2px !important;
+}
+
   .slide {
 
     width:520px;
@@ -127,7 +179,7 @@ h2 {
 
     .label {
       font-weight:bold;
-      font-size:0.8em;
+      font-size:0.7em;
     }
     
     .bar {
@@ -149,7 +201,7 @@ h2 {
     .chart {
       margin-left:auto;
       margin-right:auto;
-      height:150px;
+      height:250px;
     }
     
   .chartLabel {
@@ -317,26 +369,7 @@ h2 {
     }
   
   }
-  
-  @media (max-width:500px) {
-      #wrapper {
-          width:100%;
-      }
-  
-    .ind {
-        width:17%;
-    }
-  
-  
-    .gop {
-        width:33%;
-    }
-  
-    .dfl {  
-        width:21%;
-    }
-  
-  }
+
   
   /*-- Chart --*/
   .c3 svg {
@@ -545,6 +578,9 @@ h2 {
   }
   
   /*DEMOCRATIC PARTY QUANTILE*/
+  .white {
+    fill: #ffffff !important;
+  }
   .dq1 {
     fill: #99D0E5;
     background-color: #99D0E5;
