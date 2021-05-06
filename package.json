@@ -74,7 +74,7 @@
     "svelte-loader": "^2.10.0",
     "svelte-transitions-fade": "^1.0.0",
     "uglifyjs-webpack-plugin": "^1.2.7",
-    "underscore": "^1.8.3",
+    "underscore": "^1.12.1",
     "webpack": "^4.16.4",
     "webpack-cli": "^3.1.2",
     "yargs": "^11.0.0"
